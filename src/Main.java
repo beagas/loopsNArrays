@@ -28,18 +28,23 @@ public class Main {
 // kaip stringus. Sukurti trečią kintamąjį ir jam priskirti stringą, sudarytą
 // iš pirmų vardo ir pavardės kintamųjų raidžių. Jį atspausdinti.
 
-        String initials = name.substring(0,1);
-        String initials1 =lastname.substring(0,1);
-        String inic = initials + initials1;
-        System.out.println(inic);
+//        String initials = name.substring(0,1);
+//        String initials1 =lastname.substring(0,1);
+//        String inic = initials + initials1;
+//        System.out.println(inic);
+
+        String inic1 = name.substring(0,1) + lastname.substring(0,1);
+        System.out.println(inic1);
+
+        System.out.println("" + name.charAt(0) + lastname.charAt(0));
 
         System.out.println("< 4 uzduotis >");
 //Sukurti du kintamuosius. Jiems priskirti savo mylimo aktoriaus vardą ir pavardę
 // kaip stringus. Sukurti trečią kintamąjį ir jam priskirti stringą, sudarytą iš
 // trijų paskutinių vardo ir pavardės kintamųjų raidžių. Jį atspausdinti.
 
-        int namenum = Integer.parseInt(String.valueOf(name.length()-3));
-        int surnamenum = Integer.parseInt(String.valueOf(lastname.length()-3));
+        int namenum = Integer.parseInt(String.valueOf(name.length() - 3));
+        int surnamenum = Integer.parseInt(String.valueOf(lastname.length() - 3));
         String trkin = name.substring(namenum) + lastname.substring(surnamenum);
         System.out.println(trkin);
 
@@ -57,45 +62,25 @@ public class Main {
         String american = (American.toLowerCase());
         System.out.print(American + " paversta į: ");
         System.out.println(american.
-                replace("a", "").
-                replace("e", "").
-                replace("i", "").
-                replace("y", "").
-                replace("o", "").
-                replace("u", ""));
+                replaceAll("[aeiyou]",""));
 
         String Breakfast = "Breakfast at Tiffany's";
         String breakfast = (Breakfast.toLowerCase());
         System.out.print(Breakfast + " paversta į: ");
         System.out.println(breakfast.
-                replace("a", "").
-                replace("e", "").
-                replace("i", "").
-                replace("y", "").
-                replace("o", "").
-                replace("u", ""));
+                replaceAll("[aeiyou]",""));
 
         String Space = "2001: A Space Odyssey";
         String space = (Space.toLowerCase());
         System.out.print(Space + " paversta į: ");
         System.out.println(space.
-                replace("a", "").
-                replace("e", "").
-                replace("i", "").
-                replace("y", "").
-                replace("o", "").
-                replace("u", ""));
+                replaceAll("[aeiyou]",""));
 
         String Life = "It's a Wonderful Life";
         String life = (Life.toLowerCase());
         System.out.print(Life + " paversta į: ");
         System.out.println(life.
-                replace("a", "").
-                replace("e", "").
-                replace("i", "").
-                replace("y", "").
-                replace("o", "").
-                replace("u", ""));
+                replaceAll("[aeiyou]",""));
 
 
         System.out.println("< 7 uzduotis >");
@@ -103,9 +88,13 @@ public class Main {
 //        "Star Wars: Episode "+ " ".repeat( (int) (Math.random() * 10))+((int)
 //        (Math.random() * 7)+1) + " - A New Hope" Surasti ir atspausdinti epizodo numerį.
 
-//        String episode = "Star Wars: Episode" + " " .repeat((int)(Math.random() * 10)) + ((int) Math.random() * 7) + 1)
-//        +" - A New Hope";
-//        System.out.println(episode);
+        String episode = "Star Wars: Episode" + " ".repeat((int) (Math.random() * 10)) + ((int) (Math.random() * 7) + 1)
+        + " - A New Hope";
+        System.out.println(episode);
+        System.out.println("episode number: " + episode.charAt(episode.length()-14));
+        System.out.println("episode number: " + episode.replaceAll("[^0-9]",""));
+        System.out.println("episode number: " + episode.replaceAll("[^\\d]",""));
+        System.out.println("episode number: " + episode.replaceAll("[a-zA-Z: -]",""));
 
         System.out.println("< 8 uzduotis >");
 //        Suskaičiuoti kiek stringe “Don't Be a Menace to South Central While Drinking
